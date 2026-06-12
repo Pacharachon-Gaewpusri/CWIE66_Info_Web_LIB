@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.redirect('D:/Pacharachon_Work/CWIE66_Info_Web_LIB/Front_end/Login_Page/src/App.jsx');
+  res.redirect('http://localhost:5173/main.js');
 });
 
 
