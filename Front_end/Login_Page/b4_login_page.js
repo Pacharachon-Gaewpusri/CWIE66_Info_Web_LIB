@@ -9,10 +9,11 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url))
     configFile: false,
     root: __dirname,
     server: {
-      port: 1337
+      port: 3000
     }
   })
   await server.listen()
 
   server.printUrls()
 })()
+
