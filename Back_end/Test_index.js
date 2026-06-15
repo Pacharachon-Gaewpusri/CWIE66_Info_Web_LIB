@@ -1,6 +1,6 @@
 var express = require('express');
 var app = module.exports = express();
-const port = 5174;
+const port = 3000;
 
 // app.get('/', (req, res) => {
 //   res.redirect('');
@@ -11,7 +11,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
-const mysql = require('mysql2');
+const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'SupremeAdmin',
@@ -35,7 +35,7 @@ connection.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
 //  * Module dependencies.
 //  */
 
-// var hash = require('pbkdf2-password')();
+var hash = require('pbkdf2-password')();
 var path = require('node:path');
 var session = require('express-session');
 // var app = module.exports = express();
