@@ -1,7 +1,7 @@
 var express = require('express');
 var app = module.exports = express();
 var port = 3000;
-import app from "D:/Pacharachon_Work/CWIE66_Info_Web_LIB/Back_end/src/app.js";
+
 
 // app.get('/', (req, res) => {
 //   res.redirect('');
@@ -12,8 +12,8 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
-const mysql = require('mysql');
-const connection = mysql.createConnection({
+var mysql = require('mysql');
+var connection = mysql.createConnection({
   host: 'localhost',
   user: 'SupremeAdmin',
   password: 'Internsh1p_;-;',
@@ -21,11 +21,14 @@ const connection = mysql.createConnection({
 });
 
 connection.connect();
-
-connection.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
+connection.query('SELECT * FROM `user_list`', (err, rows, fields) => {
   if (err) throw err;
 
-  console.log('The solution is: ', rows[0].solution);
+  console.log('User list: ', rows);
 });
+
+  // error will be an Error if one occurred during the query
+  // results will contain the results of the query
+  // fields will contain information about the returned results fields (if any)
 
 // connection.end();
