@@ -1,7 +1,7 @@
 var express = require('express');
 var app = module.exports = express();
 var port = 3000;
-import app from "./src/app.js";
+import app from "D:/Pacharachon_Work/CWIE66_Info_Web_LIB/Back_end/src/app.js";
 
 // app.get('/', (req, res) => {
 //   res.redirect('');
