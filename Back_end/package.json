@@ -13,7 +13,6 @@
     "jade": "^0.29.0",
     "morgan": "^1.11.0",
     "mysql": "^2.18.1",
-    "express-session": "^1.18.1",
-    "pbkdf2-password": "1.2.1"
+    "express-session": "^1.18.1"
   }
 }
