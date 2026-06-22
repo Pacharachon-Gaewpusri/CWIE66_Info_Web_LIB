@@ -1,4 +1,4 @@
-import mysql from 'mysql';
+import mysql from 'mysql2';
 
 export const getOneJobRecord = async (req, res, next) => {
     const {_id} = req.params;
@@ -36,13 +36,7 @@ export const postJobRecord = async (req, res, next) => {
     //console.log(`${username}\n${workdate}\n${name}\n${description}\n${progression}\n${hours}\n${minutes}\n\n`)
     try{
         const record = new modelJobRecord({
-            username,
-            name,
-            workDate,
-            description,
-            progression,
-            hours,
-            minutes,
+            idUser_list, Username, Password, Notice,
             fileNames: file.map((x, idx) => x.filename)
         })
         await record.save();
@@ -66,13 +60,7 @@ export const putJobRecord = async (req, res, next) => {
 
     try{
         const edit = await modelJobRecord.findByIdAndUpdate(_id, {
-            username,
-            name, 
-            workDate,
-            description,
-            progression,
-            hours,
-            minutes,
+            idUser_list, Username, Password, Notice,
             fileNames: [...oldFiles.split(','), ...file.map((x, idx) => x.filename)]
         })
         if(!edit){
