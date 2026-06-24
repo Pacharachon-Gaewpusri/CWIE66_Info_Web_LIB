@@ -5,12 +5,12 @@ import javascriptLogo from '../assets/javascript.svg'
 import viteLogo from '../assets/vite.svg'
 import heroImg from '../assets/hero.png'
 import { setupCounter } from '../counter.js'
-import Signup from './Signup.js'
+
 import Login from './Login.js'
-import Home from './Home.js'
+import Home_after_Login from './Home.js'
 
-
-export const signupHTML = `
+var signupHTML = document.getElementById("signup-container");
+signupHTML.querySelector('#style').innerHTML = `
 <div class="signup-container">
   <div class="signup-header">
     <h2>Create account</h2>
@@ -47,14 +47,14 @@ export const signupHTML = `
   </form>
 
   <div class="form-footer">
-    <p>Already have an account? <a href="http://localhost:5173/Login" id="to-login-link">Sign in</a></p>
+    <p>Already have an account? <a href="http://localhost:5173/Login/" id="to-login-link">Sign in</a></p>
   </div>
 </div>
 `
 
-export function Signup(container = document.querySelector('#app')) {
-  if (!container) return;
-  container.innerHTML = signupHTML;
+// export function Signup(container = document.querySelector('#app')) {
+//   if (!container) return;
+//   container.innerHTML = signupHTML;
 
   const toLogin = container.querySelector('#to-login-link');
   if (toLogin) {
@@ -69,6 +69,6 @@ export function Signup(container = document.querySelector('#app')) {
       });
     });
   }
-}
+// }
 
 export default Signup;

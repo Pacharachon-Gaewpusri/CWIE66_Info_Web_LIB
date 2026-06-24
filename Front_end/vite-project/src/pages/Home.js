@@ -5,9 +5,9 @@ import heroImg from '../assets/hero.png'
 import { setupCounter } from '../counter.js'
 import Signup from './Signup.js'
 import Login from './Login.js'
-import Home from './Home.js'
 
-export const signupHTML = `
+var HomeHTML = document.getElementById("home-container");
+HomeHTML.querySelector('#style').innerHTML = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@ export const signupHTML = `
     
 </head>
 <body>
-    <div class="signup-container">
+    <div class="home-container">
         <div class="form-header">
             <h2>Home</h2>
         </div>
@@ -24,10 +24,26 @@ export const signupHTML = `
         <p>Welcome to the Home page!</p>
         </div>
     </div>
-    }
   </body>
 `
-export default Home
+// export function Home_after_Login(container = document.querySelector('#app')) {
+//   if (!container) return;
+//   container.innerHTML = homeHTML;
+
+  const toLogin = container.querySelector('#to-login-link');
+  if (toLogin) {
+    toLogin.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Simple client-side navigation: reload main.js default content
+      import('../main.jsx').then(mod => {
+        if (mod && typeof mod.default === 'function') mod.default();
+        // If main.js doesn't export default, you can call a named function instead
+      }).catch(() => {
+        window.location.reload();
+      });
+    });
+  }
+// }
 
 // export function renderSignup(container = document.querySelector('#app')) {
 //   if (!container) return;
