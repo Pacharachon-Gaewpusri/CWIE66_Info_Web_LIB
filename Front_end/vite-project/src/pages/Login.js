@@ -54,9 +54,9 @@ loginHTML.querySelector('#style').innerHTML = `
 </body>
 `
 setupCounter(document.querySelector('#counter'))
-// export function Login(container = document.querySelector('#app')) {
-//   if (!container) return;
-//   container.innerHTML = loginHTML;
+export function Login(container = document.querySelector('#app')) {
+  if (!container) return;
+  container.innerHTML = loginHTML;
 
   const toSignup = container.querySelector('#to-signup-link');
   if (toSignup) {
@@ -71,7 +71,7 @@ setupCounter(document.querySelector('#counter'))
       });
     });
   }
-// }
+}
 
 
 export default Login;

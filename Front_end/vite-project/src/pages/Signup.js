@@ -52,9 +52,9 @@ signupHTML.querySelector('#style').innerHTML = `
 </div>
 `
 
-// export function Signup(container = document.querySelector('#app')) {
-//   if (!container) return;
-//   container.innerHTML = signupHTML;
+export function Signup(container = document.querySelector('#app')) {
+  if (!container) return;
+  container.innerHTML = signupHTML;
 
   const toLogin = container.querySelector('#to-login-link');
   if (toLogin) {
@@ -69,6 +69,6 @@ signupHTML.querySelector('#style').innerHTML = `
       });
     });
   }
-// }
+}
 
 export default Signup;

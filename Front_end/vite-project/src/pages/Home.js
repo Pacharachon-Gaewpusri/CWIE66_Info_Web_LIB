@@ -26,9 +26,9 @@ HomeHTML.querySelector('#style').innerHTML = `
     </div>
   </body>
 `
-// export function Home_after_Login(container = document.querySelector('#app')) {
-//   if (!container) return;
-//   container.innerHTML = homeHTML;
+export function Home_after_Login(container = document.querySelector('#app')) {
+  if (!container) return;
+  container.innerHTML = homeHTML;
 
   const toLogin = container.querySelector('#to-login-link');
   if (toLogin) {
@@ -43,7 +43,7 @@ HomeHTML.querySelector('#style').innerHTML = `
       });
     });
   }
-// }
+}
 
 // export function renderSignup(container = document.querySelector('#app')) {
 //   if (!container) return;
